@@ -3,6 +3,7 @@
         <UButton
             @click="generateProducts()"
             :loading="generateStatus === 'pending'"
+            :disabled="alreadyGenerated"
         >
             Generate 200 random products
         </UButton>
@@ -10,6 +11,7 @@
             @click="clearDatabase()"
             :loading="clearStatus === 'pending'"
             color="error"
+            :disabled="!alreadyGenerated"
         >
             Clear database
         </UButton>
@@ -22,6 +24,10 @@ definePageMeta({
 });
 
 const toast = useToast();
+
+const { data: alreadyGenerated, refresh: alreadyGeneratedRefresh } = useFetch(
+    "/api/products/generated",
+);
 
 const onGenerate = async (ok: boolean) => {
     if (!ok) {
@@ -37,6 +43,7 @@ const onGenerate = async (ok: boolean) => {
         description: "200 random products have been generated",
         color: "success",
     });
+    await alreadyGeneratedRefresh();
 };
 
 const { status: generateStatus, execute: generateProducts } = useFetch(
@@ -62,6 +69,7 @@ const onClear = async (ok: boolean) => {
         description: "Database has been cleared",
         color: "success",
     });
+    await alreadyGeneratedRefresh();
 };
 
 const { status: clearStatus, execute: clearDatabase } = useFetch(
