@@ -8,7 +8,7 @@ export default defineEventHandler(async () => {
         return {
             category: commerce.department(),
             description: commerce.productDescription(),
-            image: image.url(),
+            image: image.urlPicsumPhotos(),
             name: commerce.productName(),
             price: Number(commerce.price()),
             rating: number.float({ min: 0, max: 5, fractionDigits: 1 }),
