@@ -10,18 +10,11 @@
         v-if="filteredProducts?.length"
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8"
     >
-        <UCard v-for="product in filteredProducts" :key="product.id">
-            <template #header>
-                <p>{{ product.name }}</p>
-            </template>
-
-            <img
-                :src="product.image"
-                alt=""
-                lazy
-                class="object-cover aspect-square rounded-lg"
-            />
-        </UCard>
+        <ProductCard
+            v-for="product in filteredProducts"
+            :key="product.id"
+            :product
+        />
     </section>
     <section
         v-else
