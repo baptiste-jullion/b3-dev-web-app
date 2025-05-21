@@ -2,15 +2,18 @@
 export default defineNuxtConfig({
     compatibilityDate: "2025-05-15",
     devtools: { enabled: true },
-    modules: ["@nuxt/ui"],
+    modules: ["@nuxt/ui", "@vueuse/nuxt"],
     css: ["~/assets/css/main.css"],
 
-    nitro: {
-        storage: {
-            db: {
-                driver: "fs",
-                base: "./db",
-            },
+    runtimeConfig: {
+        SECRET: "",
+        public: {
+            AUTH_COOKIE_NAME: "",
         },
+    },
+
+    // in order to handle shared folder auto import
+    future: {
+        compatibilityVersion: 4,
     },
 });
