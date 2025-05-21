@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@eslint/js": "^9.27.0",
+    "@faker-js/faker": "^9.8.0",
     "@nuxt/ui": "^3.1.2",
     "@stylistic/eslint-plugin-ts": "^4.2.0",
     "eslint": "^9.27.0",
