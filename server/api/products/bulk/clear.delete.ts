@@ -6,5 +6,7 @@ export default defineEventHandler(async () => {
         setTimeout(resolve, useFaker.number.int({ min: 500, max: 2000 })),
     );
 
-    return;
+    return {
+        success: true,
+    };
 });

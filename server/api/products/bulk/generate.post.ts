@@ -28,5 +28,7 @@ export default defineEventHandler(async () => {
         setTimeout(resolve, number.int({ min: 500, max: 2000 })),
     );
 
-    return;
+    return {
+        success: true,
+    };
 });

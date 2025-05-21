@@ -9,4 +9,8 @@ export default defineEventHandler(async (event) => {
             data: "Provided credentials are not valid.",
         });
     }
+
+    return {
+        success: true,
+    };
 });
