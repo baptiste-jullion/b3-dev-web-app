@@ -32,5 +32,12 @@ const items = ref<NavigationMenuItem[][]>([
             to: "/cart",
         },
     ],
+    [
+        {
+            label: "Login",
+            icon: "i-lucide-log-in",
+            to: "/login",
+        },
+    ],
 ]);
 </script>
