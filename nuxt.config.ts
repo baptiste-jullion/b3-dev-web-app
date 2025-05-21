@@ -17,12 +17,12 @@ export default defineNuxtConfig({
         compatibilityVersion: 4,
     },
 
-    nitro: {
-        storage: {
-            db: {
-                driver: "fs",
-                base: "./db",
-            },
-        },
-    },
+    // nitro: {
+    //     storage: {
+    //         db: {
+    //             driver: "fs",
+    //             base: "./db",
+    //         },
+    //     },
+    // },
 });
