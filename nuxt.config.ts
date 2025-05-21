@@ -16,4 +16,13 @@ export default defineNuxtConfig({
     future: {
         compatibilityVersion: 4,
     },
+
+    nitro: {
+        storage: {
+            db: {
+                driver: "fs",
+                base: "./db",
+            },
+        },
+    },
 });
