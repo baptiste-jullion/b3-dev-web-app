@@ -7,14 +7,16 @@
         >
             Generate 200 random products
         </UButton>
-        <UButton
-            @click="clearDatabase()"
-            :loading="clearStatus === 'pending'"
-            color="error"
-            :disabled="!alreadyGenerated"
-        >
-            Clear database
-        </UButton>
+        <UTooltip text="Only available with FS driver">
+            <UButton
+                @click="clearDatabase()"
+                :loading="clearStatus === 'pending'"
+                color="error"
+                :disabled="!alreadyGenerated || true"
+            >
+                Clear database
+            </UButton>
+        </UTooltip>
     </div>
 </template>
 
